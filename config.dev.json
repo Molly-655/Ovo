@@ -17,8 +17,8 @@
     "ignoreCommand": []
   },
   "adminBot": [
-    "100089360940322",
-    "100090109928709",
+    "",
+    "61579279925067",
     "",
     ""
   ],
@@ -27,8 +27,8 @@
     "whiteListIds": [],
     "notes": "if you enable this feature, only the ids in the whiteListIds section can use the bot"
   },
-  "nickNameBot": "❄️Endy❄️",
-  "prefix": "-",
+  "nickNameBot": "AVA",
+  "prefix": "?",
   "database": {
     "type": "sqlite",
     "uriMongodb": "",
