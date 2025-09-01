@@ -1,0 +1,1 @@
+module.exports = { config:{name:"hello"}, onStart:()=>{ console.log("hi") } }
