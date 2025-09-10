@@ -4,10 +4,10 @@ module.exports = {
   config: {
     name: 'gitadd',
     version: '1.1',
-    author: 'jesoo and Hassan',
+    author: 'Molly',
     role: 2,
     description: {
-      en: 'Install commands directly to GitHub repository',
+      en: 'Install commands directly to your GitHub repository',
     },
     category: 'owner',
     guide: {
@@ -48,11 +48,12 @@ module.exports = {
 };
 
 async function installScript(fileName, content, message) {
-  // 👇 EDIT THESE VALUES
-  const owner = 'Molly-655';   // e.g. iamjesso6t9
-  const repo = 'Ovo';          // e.g. 2025-jessi
-  const token = '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';        // e.g. github_pat_11BJQA...
-  const directory = 'scripts/cmds';       // must exist in your repo
+  // 🔧 Your GitHub repo details
+  const owner = 'Molly-655';            // your GitHub username
+  const repo = 'Ovo';                   // your repository name
+  const token = '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'; // your PAT
+  const directory = 'scripts/cmds';     // must exist in your repo
+  const branch = 'main';                // change to 'master' if repo uses master
 
   const filePath = `${directory}/${fileName}`;
   const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${filePath}`;
@@ -81,7 +82,7 @@ async function installScript(fileName, content, message) {
     const payload = {
       message: `Added ${fileName} via bot`,
       content: encodedContent,
-      branch: 'main',
+      branch,
     };
     if (sha) payload.sha = sha;
 
@@ -99,7 +100,7 @@ async function installScript(fileName, content, message) {
     if (error.response) {
       switch (error.response.status) {
         case 401:
-          errorMessage = '❌ Invalid token. Check token permissions (repo access required)'; break;
+          errorMessage = '❌ Invalid token. Check token permissions (must have repo:contents write)'; break;
         case 403:
           errorMessage = '❌ Rate limit exceeded or insufficient repo permissions'; break;
         case 404:
