@@ -51,7 +51,7 @@ async function installScript(fileName, content, message) {
   // 👇 EDIT THESE VALUES
   const owner = 'Molly-655';   // e.g. iamjesso6t9
   const repo = 'Ovo';          // e.g. 2025-jessi
-  const token = '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';        // e.g. github_pat_11BJQA...
+  const token = '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';        // e.g. github_pat_11BJQA...
   const directory = 'scripts/cmds';       // must exist in your repo
 
   const filePath = `${directory}/${fileName}`;
